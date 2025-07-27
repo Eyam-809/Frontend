@@ -35,7 +35,7 @@ export default function ProductPage() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/products/${id}`)
+        const response = await fetch(`https://backendxp-1.onrender.com/api/products/${id}`)
         if (!response.ok) throw new Error("Producto no encontrado")
         const data = await response.json()
         setProduct(data)
@@ -95,7 +95,7 @@ export default function ProductPage() {
           <div className="bg-white p-6 rounded-xl shadow-sm">
             <div className="relative">
               <img
-                src={`http://localhost:8000/storage/${product.image}`}
+                src={`https://backendxp-1.onrender.com/storage/${product.image}`}
                 alt={product.name}
                 className="w-full h-auto object-contain rounded-lg"
                 style={{ maxHeight: "400px" }}

@@ -75,7 +75,7 @@ const handleLogin = (e: React.FormEvent) => {
     setIsLoading(true);
 
     axios
-  .post("http://127.0.0.1:8000/api/login", { email, password })
+  .post("https://backendxp-1.onrender.com/api/login", { email, password })
   .then((response) => {
     console.log("Usuario autenticado:", response.data); // Verifica la respuesta completa
     // Guarda el token y el ID del usuario en localStorage
@@ -128,7 +128,7 @@ const handleLogin = (e: React.FormEvent) => {
     };
     setIsRegister(false);
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/registros", datos);
+      const response = await axios.post('https://backendxp-1.onrender.com/api/registros', datos);
 
         setMessage(response.data.message);
         //setErrors({});
@@ -140,7 +140,7 @@ const handleLogin = (e: React.FormEvent) => {
 
 useEffect(() => {
     // Llama al backend para obtener los planes
-    fetch("http://localhost:8000/api/plan")
+    fetch('https://backendxp-1.onrender.com/api/plan')
       .then((response) => response.json())
       .then((data) => {
         setPlanes(data); // Guardamos los planes en el estado

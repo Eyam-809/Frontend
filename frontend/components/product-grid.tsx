@@ -32,10 +32,12 @@ export default function ProductGrid() {
     }
   }
 
+  
+
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/products")
+        const response = await fetch("https://backendxp-1.onrender.com/api/products")
         const data = await response.json()
         setProductos(data)
         console.log(data);
@@ -83,7 +85,7 @@ export default function ProductGrid() {
                   <motion.img
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "tween" }}
-                    src={`http://localhost:8000/storage/${product.image}`}
+                    src={`https://backendxp-1.onrender.com/storage/${product.image}`}
                     alt={product.name}
                     className="w-full h-48 object-contain p-4 cursor-pointer"
                   />
